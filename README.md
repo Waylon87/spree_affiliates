@@ -1,3 +1,10 @@
+# Spree Affiliates
+
+[![Build Status](https://secure.travis-ci.org/jdutil/spree_affiliates.png)](http://travis-ci.org/jdutil/spree_affiliates)
+[![Code Climate](https://codeclimate.com/github/jdutil/spree_affiliates.png)](https://codeclimate.com/github/jdutil/spree_affiliates)
+[![Coverage Status](https://coveralls.io/repos/jdutil/spree_affiliates/badge.png?branch=master)](https://coveralls.io/r/jdutil/spree_affiliates)
+[![Dependency Status](https://gemnasium.com/jdutil/spree_affiliates.png?travis)](https://gemnasium.com/jdutil/spree_affiliates)
+
 This is an upgrade of https://github.com/printbear/spree-affiliate-sm
 
 The extension has been renamed (underscores vs. hyphens) to comply with latest Spree conventions.
