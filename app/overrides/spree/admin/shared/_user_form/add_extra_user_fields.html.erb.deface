@@ -1,18 +1,16 @@
 <!-- insert_before "[data-hook=signup_below_password_fields]" -->
 
-      <% if 'new'!=params[:action] and 'create'!=params[:action] %>
-          <p>
-            <%= label(:user, :full_name, t("full_name"), :class => "title") %><br />
-            <%= text_field(:user, :full_name, :class => "title")  %>
-          </p>
-
-          <p>
-            <%= label(:user, :website, t("website"), :class => "title") %><br />
-            <%= text_field(:user, :website, :class => "title")  %>
-          </p>
-
-          <p>
-            <%= label(:user, :phone, t("phone"), :class => "title") %><br />
-            <%= text_field(:user, :phone, :class => "title")  %>
-          </p>
-      <% end %>    
+<% if 'new'!=params[:action] and 'create'!=params[:action] %>
+  <p>
+    <%= label(:user, :full_name, t("full_name"), :class => "title") %><br />
+    <%= text_field(:user, :full_name, :class => "title")  %>
+  </p>
+  <p>
+    <%= label(:user, :website, t("website"), :class => "title") %><br />
+    <%= text_field(:user, :website, :class => "title")  %>
+  </p>
+  <p>
+    <%= label(:user, :phone, t("phone"), :class => "title") %><br />
+    <%= text_field(:user, :phone, :class => "title")  %>
+  </p>
+<% end %>

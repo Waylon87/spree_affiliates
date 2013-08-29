@@ -1,6 +1,6 @@
 This is an upgrade of https://github.com/printbear/spree-affiliate-sm
 
-The extension has been renamed (underscores vs. hyphens) to comply with latest spree conventions.
+The extension has been renamed (underscores vs. hyphens) to comply with latest Spree conventions.
 
 Currently, the only supported spree version is 2.0
 

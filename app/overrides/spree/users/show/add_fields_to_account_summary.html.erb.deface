@@ -1,4 +1,4 @@
-<!-- replace "[data-hook=account_summary]" -->
+<!-- insert_bottom "[data-hook=account_summary]" -->
 
       <div id="user_profile">
           <div id="user_details">
