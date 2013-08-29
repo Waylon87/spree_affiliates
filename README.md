@@ -35,6 +35,9 @@ A simple affiliate tracking extension for Spree.  Provides the following functio
 
     Spree::Config.set :cookie_name => "app_referrerid"
 
+## TODO
+
+Remove website and phone user fields?
 
 ## Credits
 

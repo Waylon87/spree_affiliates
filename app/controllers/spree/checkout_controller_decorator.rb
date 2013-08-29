@@ -1,6 +1,8 @@
 module Spree
   CheckoutController.class_eval do
+
     private
+
     def process_affiliate_earning
       cookie = cookies[Spree::Config[:cookie_name]]
       if cookie && cookie.to_i != @order.user_id
@@ -19,5 +21,6 @@ module Spree
       process_affiliate_earning
       token_order_path(@order, @order.token)
     end
+
   end
 end

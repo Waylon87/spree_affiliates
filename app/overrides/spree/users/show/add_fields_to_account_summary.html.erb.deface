@@ -3,19 +3,14 @@
       <div id="user_profile">
           <div id="user_details">
             <h2 class="affiliate_link">
-              <% if !@user.full_name.blank? %>
-                <%= @user.full_name %>
-              <% else %>
-                <%= t('no_name') %>
-              <% end %>
-            </h2><%= link_to t('edit_profile'), spree.edit_account_path %>
+              <%= @user.full_name %>
+            </h2>
             <p class="info_items">
-               <% if !@user.email.blank? %><a class="email" href="mailto:<%= @user.email %>"><%= @user.email %></a><br/><% end %>
-               <% if !@user.website.blank? %><a class="web" href="<%= @user.website_url %>" target="_blank"><%= @user.website %></a><br/><% end %>
-               <% if !@user.phone.blank? %><span class="phone"><%= @user.phone %></span><% end %>
+               <% if @user.website.present? %><a class="web" href="<%= @user.website_url %>" target="_blank"><%= @user.website %></a><br/><% end %>
+               <% if @user.phone.present? %><span class="phone"><%= @user.phone %></span><% end %>
             </p>
           </div>
-          <% if !Spree::Config[:claimable_amount].blank? %>
+          <% if Spree::Config[:claimable_amount].present? %>
             <div id="affiliate_details">
               <%  earnings = @user.affiliate_earnings.unpaid
                   total_earning = @user.total_earnings %>

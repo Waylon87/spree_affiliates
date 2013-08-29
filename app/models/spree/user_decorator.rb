@@ -1,6 +1,7 @@
 Spree.user_class.class_eval do
+
   attr_accessible :full_name, :website, :phone
-  #validates :website, :url_format => true
+
   has_many :affiliate_earnings do
     def unpaid
       @unpaidEarnings ||= find(:all, {
@@ -10,11 +11,13 @@ Spree.user_class.class_eval do
       })
     end
   end
+
   has_many :affiliate_credits do
     def unpaid
       @unpaidCredits ||= find(:all, :conditions => "status != 'paid'")
     end
   end
+
   def earnings_total
       total = 0
       self.affiliate_earnings.unpaid.each do |earning|
@@ -22,6 +25,7 @@ Spree.user_class.class_eval do
       end
       total
   end
+
   def credits_total
       total = 0
       self.affiliate_credits.unpaid.each do |credit|
@@ -29,9 +33,11 @@ Spree.user_class.class_eval do
       end
       total
   end
+
   def total_earnings
       self.earnings_total + self.credits_total
   end
+
   def website_url
     if website && !website.downcase.include?("http")
       "http://#{website}"
