@@ -2,7 +2,7 @@ module SpreeAffiliateSm
   class Engine < Rails::Engine
     require 'spree/core'
     isolate_namespace Spree
-    engine_name 'spree_affiliate_sm'
+    engine_name 'spree_affiliates'
 
     config.autoload_paths += %W(#{config.root}/lib)
 
