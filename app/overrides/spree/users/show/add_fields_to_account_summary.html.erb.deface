@@ -1,12 +1,5 @@
 <!-- replace "[data-hook=account_summary]" -->
 
-      <script type="text/javascript" language="javascript" charset="utf-8">
-      // <![CDATA[
-          $('head').append('<link rel="stylesheet" href="/stylesheets/affiliate_sm.css" type="text/css" />');
-          $('h1').remove();
-      // ]]>
-      </script>
-
       <div id="user_profile">
           <div id="user_details">
             <h2 class="affiliate_link">
