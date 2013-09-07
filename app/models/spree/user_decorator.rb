@@ -1,6 +1,8 @@
+require 'digest/sha1'
+
 Spree.user_class.class_eval do
 
-  attr_accessible :full_name, :website, :phone
+  attr_accessible :full_name, :website, :phone, :affiliate_id
 
   has_many :affiliate_earnings do
     def unpaid
@@ -44,5 +46,19 @@ Spree.user_class.class_eval do
     else
       self.website
     end
+  end
+
+  def affiliate_id
+    return self[:affiliate_id] if self[:affiliate_id]
+
+    record = true
+    while record
+      random = "#{Array.new(9){rand(9)}.join}"
+      record = self.class.where(affiliate_id: random).first
+    end
+
+    self.update_attributes(affiliate_id: random)
+
+    self.affiliate_id
   end
 end

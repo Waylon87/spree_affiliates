@@ -1,5 +1,4 @@
 Spree::Core::Engine.routes.draw do
-  match '/:user_id' => "affiliates#index", :as => :affiliate_referral ,:user_id => /[0-9]+/
   match 'admin/affiliate_settings/show' =>  'admin/affiliate_settings#show', :as => :admin_affiliate_settings
   match 'admin/affiliate_settings/edit' =>  'admin/affiliate_settings#edit', :as => :admin_edit_affiliate_settings
   match 'admin/affiliate_settings/update' =>  'admin/affiliate_settings#update', :as => :admin_update_affiliate_settings

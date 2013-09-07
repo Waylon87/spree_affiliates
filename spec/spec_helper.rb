@@ -20,8 +20,8 @@ require 'spree/testing_support/controller_requests'
 require 'spree/testing_support/authorization_helpers'
 require 'spree/testing_support/url_helpers'
 
-# Requires factories defined in lib/spree_affiliate_sm/factories.rb
-require 'spree_affiliate_sm/factories'
+# Requires factories defined in lib/spree_affiliate/factories.rb
+# require 'spree_affiliates/factories'
 
 RSpec.configure do |config|
   config.include FactoryGirl::Syntax::Methods
@@ -69,5 +69,7 @@ RSpec.configure do |config|
     DatabaseCleaner.clean
   end
 
+  config.include Spree::TestingSupport::ControllerRequests
+  config.include Spree::TestingSupport::AuthorizationHelpers
   config.fail_fast = ENV['FAIL_FAST'] || false
 end

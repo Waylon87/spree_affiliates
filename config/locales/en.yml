@@ -26,6 +26,7 @@ en:
   full_name: Name
   edit_profile: Edit profile
   affiliate_url: Your affiliate link
+  affiliate_query_param: Your affiliate query parameter (append to the end of the link you provide e.g. http://mysite.com?affiliate=abcd)
   order_for: orders for
   no_name: Your Name Here
   affiliate_earnings_details: details

@@ -21,7 +21,9 @@ Gem::Specification.new do |s|
   s.add_development_dependency 'capybara', '~> 2.1'
   s.add_development_dependency 'coffee-rails'
   s.add_development_dependency 'coveralls'
-  s.add_development_dependency 'database_cleaner'
+  # https://github.com/bmabey/database_cleaner/issues/224
+  # it thought we were using postgres when using sqlite3 in specs
+  s.add_development_dependency 'database_cleaner', '1.0.1' 
   s.add_development_dependency 'factory_girl', '~> 4.2'
   s.add_development_dependency 'ffaker'
   s.add_development_dependency 'rspec-rails',  '~> 2.13'
