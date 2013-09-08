@@ -23,8 +23,8 @@
                   <%= link_to t('affiliate_earnings_details'), :controller => "affiliates", :action => "show_details", :id => @user %>
                 <% end %>
                 <br />
-                <%= t("affiliate_url") %>:<br />
-                http://<%= request.host_with_port %>/<%=@user.id %><br/>
+                <%= t("affiliate_query_param") %>:<br />
+                affiliate=<%=@user.affiliate_id %><br/>
                 <% if (total_earning >= Spree::Config[:claimable_amount].to_f) %>
                   <%= link_to t('request_payment'), :controller => "affiliates", :action => "request_payment", :id => @user %>
                 <% end %>

@@ -4,16 +4,19 @@ module Spree
     private
 
     def process_affiliate_earning
-      cookie = cookies[Spree::Config[:cookie_name]]
-      if cookie && cookie.to_i != @order.user_id
+      affiliate_id_from_cookie = cookies[Spree::Config[:cookie_name]]
+      # make sure we aren't giving ourself credit
+      if affiliate_id_from_cookie && 
+          affiliate_id_from_cookie != @order.user.affiliate_id
         @order.affiliate_earning = AffiliateEarning.create
-        affiliate = @order.affiliate_earning
-        affiliate.order_id = @order.id
-        affiliate.user_id = cookie
-        affiliate.status = "created"
-        affiliate.percentage = Spree::Config[:referal_incentive]
-        affiliate.amount = (Spree::Config[:referal_incentive].to_d/100) * @order.total
-        affiliate.save
+        earning = @order.affiliate_earning
+        earning.order_id = @order.id
+        earning.user_id = (Spree::User.where(:affiliate_id => affiliate_id_from_cookie).first).id rescue nil
+        earning.status = "created"
+        earning.percentage = Spree::Config[:referal_incentive]
+        earning.amount = (Spree::Config[:referal_incentive].to_d/100) * @order.total
+
+        earning.save
       end
     end
 

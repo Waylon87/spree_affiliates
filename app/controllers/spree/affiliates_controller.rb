@@ -2,18 +2,6 @@ module Spree
   class AffiliatesController  < Spree::StoreController
     rescue_from  Errno::ENOENT, :with => :render_404
 
-    def index
-      cookie = cookies[Spree::Config[:cookie_name]]
-      if !cookie
-        cookies[Spree::Config[:cookie_name]] = { :value => params[:user_id],
-          :expires => Time.now+Spree::Config[:cookie_life_span].to_i.day }
-        puts 'created cookie for referrer -'+cookies[Spree::Config[:cookie_name]]+'|'
-      else
-        puts 'found cookie for referrer -'+cookies[Spree::Config[:cookie_name]]+'|'
-      end
-      redirect_to("/", {:status => 301}) 
-    end
-
     def show_details
       @user = spree_current_user
       if @user.nil?
