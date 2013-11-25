@@ -1,5 +1,0 @@
-<!-- insert_bottom "[data-hook=admin_tabs]" -->
-
-<% if can? :admin, Spree::Admin::AffiliateSettingsController %>
-  <%= tab :affiliate_settings, icon: 'icon-file', label: 'Affiliates'  %>
-<% end %>
