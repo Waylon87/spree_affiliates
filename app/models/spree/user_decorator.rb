@@ -2,7 +2,7 @@ require 'digest/sha1'
 
 Spree.user_class.class_eval do
 
-  attr_accessible :full_name, :website, :phone, :affiliate_id
+  #attr_accessible :full_name, :website, :phone, :affiliate_id
 
   has_many :affiliate_earnings do
     def unpaid

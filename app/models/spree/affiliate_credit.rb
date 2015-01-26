@@ -3,6 +3,6 @@ module Spree
     belongs_to :user
     belongs_to :affiliate_payment
 
-    attr_accessible :comment, :amount, :user_id, :status
+    #attr_accessible :comment, :amount, :user_id, :status
   end
 end
