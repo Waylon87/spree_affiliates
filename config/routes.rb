@@ -8,7 +8,7 @@ Spree::Core::Engine.routes.draw do
   match 'affiliates/request_payment' =>  'affiliates#request_payment', :as => :request_payment, via: :get
   match 'affiliates/pay_user' =>  'affiliates#pay_user', :as => :pay_user, via: :post
   namespace :admin do
-    resources :user do
+    resources :users do
       resources :affiliate_credits
     end
   end

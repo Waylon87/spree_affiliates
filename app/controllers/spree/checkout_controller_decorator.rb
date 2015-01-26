@@ -6,8 +6,7 @@ module Spree
     def process_affiliate_earning
       affiliate_id_from_cookie = cookies[Spree::Config[:cookie_name]]
       # make sure we aren't giving ourself credit
-      if affiliate_id_from_cookie && 
-          affiliate_id_from_cookie != @order.user.affiliate_id
+      if affiliate_id_from_cookie && affiliate_id_from_cookie != @order.user.affiliate_id
         @order.affiliate_earning = AffiliateEarning.create
         earning = @order.affiliate_earning
         earning.order_id = @order.id
