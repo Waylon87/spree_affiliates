@@ -10,6 +10,6 @@ module Spree
       @from       = user.email
       @sent_on    = Time.now
     end
-
+    
   end
 end
