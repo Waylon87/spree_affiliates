@@ -17,7 +17,7 @@ module SpreeAffiliateSm
       end
 
       Spree::AppConfiguration.class_eval do
-        preference :cookie_name, :string, default: 'sm_referrerid'
+        preference :cookie_name, :string, default: 'app_referrerid'
         preference :cookie_life_span, :integer
         preference :claimable_amount, :decimal, default: 0.0
         preference :referal_incentive, :decimal, default: 0.0
